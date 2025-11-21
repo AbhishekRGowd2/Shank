@@ -1,0 +1,232 @@
+/* Main container */
+.score-wrapper {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Shared card style */
+  .score-card {
+    position: relative;
+    width: 340px;
+    padding: 28px 24px !important;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    overflow: hidden;
+  }
+  
+  /* Card header with provider */
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .provider-line {
+    width: 24px;
+    height: 2px;
+    background: #dc2626;
+    border-radius: 1px;
+  }
+  
+  .score-provider {
+    font-weight: 700;
+    color: #dc2626;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  /* Circle meter */
+  .circle-container {
+    position: relative;
+    margin: 0 auto 24px;
+  }
+  
+  .score-meter {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+  
+  svg {
+    transform: rotate(-90deg);
+  }
+  
+  .bg-ring {
+    fill: none;
+    stroke: #f1f5f9;
+    stroke-width: 10;
+  }
+  
+  .score-ring {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke: url(#scoreGradient);
+    transition: all 0.8s ease;
+  }
+  
+  /* Center score display */
+  .center-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .score-number {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+  }
+  
+  .score-label {
+    margin-top: 8px;
+  }
+  
+  .rating {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .score-range {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+  }
+  
+  /* Footer section */
+  .score-footer {
+    margin: 20px 0;
+    padding: 16px 0;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .next-update {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+  
+  .card-footer-note {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-top: 12px;
+  }
+  
+  /* Locked card styles - REDUCED BLUR */
+  .locked-card {
+    position: relative;
+  }
+  
+  .locked-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* Less opaque */
+    backdrop-filter: blur(4px); /* Reduced blur */
+    z-index: 2;
+  }
+  
+  /* Apply subtle blur to content */
+  .locked-card .card-header,
+  .locked-card .circle-container,
+  .locked-card .score-footer,
+  .locked-card .card-footer-note {
+    filter: blur(2px); /* Reduced blur */
+    opacity: 0.8; /* More visible */
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Unlock button */
+  .unlock-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    
+    --background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --background-hover: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    --color: white;
+    --box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    --border-radius: 25px;
+    
+    width: 160px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .unlock-btn:hover {
+    --box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+    transform: translate(-50%, -50%) translateY(-2px);
+  }
+  
+  .unlock-btn ion-icon {
+    margin-right: 6px;
+    font-size: 18px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .score-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .score-card {
+      width: 100%;
+      max-width: 340px;
+    }
+  }
+  
+  /* Animation for active card */
+  .active-card {
+    animation: cardEntrance 0.6s ease-out;
+  }
+  
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

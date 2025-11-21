@@ -1,0 +1,140 @@
+.custom-ion-header {
+    --background: transparent;
+    box-shadow: none;
+}
+
+/* Make toolbar allow bottom alignment */
+.toolbar-bg {
+    --background: transparent !important;
+    background: linear-gradient(135deg, #0d5bff 0%, #0937e0 100%) !important;
+
+    --color: white;
+
+    padding: 20px;
+    padding-bottom: 35px;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    color: white;
+    overflow: visible !important; 
+    display: flex;
+    align-items: flex-start;
+    /* IMPORTANT FIX */
+    justify-content: space-between;
+}
+
+/* Left Section now aligns to bottom */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* THIS pushes Hello Darshan to bottom */
+    height: 100%;
+    position: relative;     /* important */
+    height: 100%;
+}
+
+
+/* Avatar + Texts */
+.user-block {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.avatar-circle {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-circle ion-icon {
+    font-size: 28px;
+    color: white;
+}
+
+
+
+
+.hello-text {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sub-text {
+    margin-top: 2px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* Make FinScore small + grayish */
+.logo {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Place Hello Darshan at the bottom-left but slightly right */
+.user-texts {
+    position: absolute;
+    top: 150%;           /* ⬅ change this to any % you want */
+    left: 85px;         /* moves slightly right (same as before) */
+    transform: translateY(-50%);   /* centers it vertically on that % point */
+  }
+  
+
+.hello-text {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+/* Keep header-left full height so bottom alignment works */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.icon-btn {
+    --color: white;
+    margin: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(3px);
+}
+
+.orange-btn {
+    background: #ff9d00 !important;
+}
+
+/* NotificationBadge */
+.notif-wrapper {
+    position: relative;
+}
+
+.notif-dot {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 9px;
+    height: 9px;
+    background: red;
+    border-radius: 50%;
+}
+
+/* Divider */
+.header-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.13);
+    margin: 0 20px;
+}

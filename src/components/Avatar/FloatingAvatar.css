@@ -1,0 +1,23 @@
+.floating-avatar {
+    position: absolute;
+    left: 20px;                /* distance from left of screen */
+    bottom: -30px;             /* pushes half outside the header */
+    
+    width: 64px;
+    height: 64px;
+    background: rgba(13, 91, 255, 0.25);
+    backdrop-filter: blur(3px);
+  
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    z-index: 9999;             /* stays above header */
+  }
+  
+  .floating-avatar ion-icon {
+    font-size: 30px;
+    color: white;
+  }
+  
